@@ -1,0 +1,265 @@
+AUTODETECT      ">*"
+
+#Global settings:
+KEYWIDTH        1
+
+BEGIN           ">??*"
+
+MATCH		">*"
+	    SRT "* *=*1:*\t*=*1"
+	    WRITE "name"
+
+MATCH		">*"
+	    SRT "* *=*1:*\t*=*1"
+	    WRITE "acc"
+
+MATCH		">*"
+		SRT "* *=*1:*\t*=*1"
+		WRITE "uniqueID"
+
+MATCH		">*"
+		SRT "*\t*=*2:*\t*=*1"
+		WRITE "CDS_locus_tag"
+
+MATCH		">*"
+		SRT "*\t*\t*=*3:*\t*=*1"
+		WRITE "CDS_note"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "CDS_product"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*=*5:*\t*=*1"
+		WRITE "CDS_protein_id"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*=*6:*\t*=*1"
+		WRITE "CDS_transl_table"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*=*7:*\t*=*1"
+		WRITE "CDS_translation"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*=*8:*\t*=*1"
+		WRITE "Class"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*1"
+		WRITE "Organism"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*2:*\t*=*1"
+		WRITE "Source"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*=*3:*\t*=*1"
+		WRITE "accession"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "accession_region"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*=*5:*\t*=*1"
+		WRITE "authors"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*=*6:*\t*=*1"
+		WRITE "candidate"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*=*7:*\t*=*1"
+		WRITE "cds_instructions"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*=*8:*\t*=*1"
+		WRITE "cds_subfeature_instructions"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*1"
+		WRITE "comments"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*2:*\t*=*1"
+		WRITE "cultivar"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*=*3:*\t*=*1"
+		WRITE "date"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "definition"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*=*5:*\t*=*1"
+		WRITE "domain"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*=*6:*\t*=*1"
+		WRITE "exonInstructions"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*=*7:*\t*=*1"
+		WRITE "family"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*=*8:*\t*=*1"
+		WRITE "fileName"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*1"
+		WRITE "genus"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*2:*\t*=*1"
+		WRITE "gi"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*=*3:*\t*=*1"
+		WRITE "journal"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "kingdom"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*=*5:*\t*=*1"
+		WRITE "locus"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*=*6:*\t*=*1"
+		WRITE "mRNA_product"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*=*7:*\t*=*1"
+		WRITE "mRNA_transcript_id"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*=*8:*\t*=*1"
+		WRITE "order"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*1"
+		WRITE "phylum"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*2:*\t*=*1"
+		WRITE "pubmed"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*=*3:*\t*=*1"
+		WRITE "size"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "source_chromosome"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*=*5:*\t*=*1"
+		WRITE "source_mol_type"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*=*6:*\t*=*1"
+		WRITE "source_note"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*=*7:*\t*=*1"
+		WRITE "source_strain"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*=*8:*\t*=*1"
+		WRITE "source_variety"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*1"
+		WRITE "species"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*2:*\t*=*1"
+		WRITE "strain"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*=*3:*\t*=*1"
+		WRITE "strand"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "subclass"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*=*5:*\t*=*1"
+		WRITE "subfamily"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*=*6:*\t*=*1"
+		WRITE "subgenus"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*=*7:*\t*=*1"
+		WRITE "subkingdom"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*=*8:*\t*=*1"
+		WRITE "suborder"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*1"
+		WRITE "subphylum"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*2:*\t*=*1"
+		WRITE "subspecies"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*=*3:*\t*=*1"
+		WRITE "subtribe"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "superclass"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*=*5:*\t*=*1"
+		WRITE "superfamily"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*=*6:*\t*=*1"
+		WRITE "superkingdom"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*=*7:*\t*=*1"
+		WRITE "superphylum"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*=*8:*\t*=*1"
+		WRITE "taxonID"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*1"
+		WRITE "taxonomy"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*=*2:*\t*=*1"
+		WRITE "title"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*=*3:*\t*=*1"
+		WRITE "varietas"
+
+MATCH		">*"
+		SRT "*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*\t*\t*\t*\t*\t*=*9:*\t*\t*\t*=*4:*\t*=*1"
+		WRITE "version"
+
+
+SEQUENCEAFTER   "*"
+SEQUENCESRT     ""
+SEQUENCEACI     "remove(".-0123456789 /")"
+SEQUENCECOLUMN 	0
+SEQUENCEEND     ">*"
+
+DONT_GEN_NAMES
+
+END             "//"

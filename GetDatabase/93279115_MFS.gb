@@ -1,0 +1,133 @@
+LOCUS       2CFQ_A                   417 aa            linear   BCT 24-SEP-2008
+DEFINITION  Chain A, Sugar Free Lactose Permease At Neutral Ph.
+ACCESSION   2CFQ_A
+VERSION     2CFQ_A  GI:93279115
+DBSOURCE    pdb: molecule 2CFQ, chain 65, release Aug 27, 2007;
+            deposition: Feb 22, 2006;
+            class: Transport;
+            source: Mol_id: 1; Organism_scientific: Escherichia Coli;
+            Expression_system: Escherichia Coli;
+            Exp. method: X-Ray Diffraction.
+KEYWORDS    .
+SOURCE      Escherichia coli
+  ORGANISM  Escherichia coli
+            Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacteriales;
+            Enterobacteriaceae; Escherichia.
+REFERENCE   1  (residues 1 to 417)
+  AUTHORS   Mirza,O., Guan,L., Verner,G., Iwata,S. and Kaback,H.R.
+  TITLE     Structural evidence for induced fit and a mechanism for sugar/H+
+            symport in LacY
+  JOURNAL   EMBO J. 25 (6), 1177-1183 (2006)
+   PUBMED   16525509
+  REMARK    Erratum:[EMBO J. 2006 May 3;25(9):2038]
+REFERENCE   2  (residues 1 to 417)
+  AUTHORS   Mirza,O., Guan,L., Verner,G., Iwata,S. and Kaback,H.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-FEB-2006)
+COMMENT     SEQRES.
+FEATURES             Location/Qualifiers
+     source          1..417
+                     /organism="Escherichia coli"
+                     /db_xref="taxon:562"
+     Region          1..413
+                     /region_name="LacY_symp"
+                     /note="LacY proton/sugar symporter; pfam01306"
+                     /db_xref="CDD:110319"
+     SecStr          8..26
+                     /sec_str_type="helix"
+                     /note="helix 1"
+     Het             join(21,177)
+                     /heterogen="( HG, 502 )"
+     SecStr          29..36
+                     /sec_str_type="helix"
+                     /note="helix 2"
+     Region          39..379
+                     /region_name="MFS"
+                     /note="The Major Facilitator Superfamily (MFS) is a large
+                     and diverse group of secondary transporters that includes
+                     uniporters, symporters, and antiporters. MFS proteins
+                     facilitate the transport across cytoplasmic or internal
+                     membranes of a variety of...; cd06174"
+                     /db_xref="CDD:119392"
+     SecStr          45..59
+                     /sec_str_type="helix"
+                     /note="helix 3"
+     Site            order(49,52..53,56,60..61,63..64,114..115,118..119,
+                     122..123,126,140..141,144..145,151,233,236..237,240..241,
+                     244,261,265,269,272,276,323,326..327,330,334..335,338,
+                     349..350,353..354,357,359,362)
+                     /site_type="other"
+                     /note="putative substrate translocation pore"
+                     /db_xref="CDD:119392"
+     SecStr          60..70
+                     /sec_str_type="helix"
+                     /note="helix 4"
+     SecStr          75..85
+                     /sec_str_type="helix"
+                     /note="helix 5"
+     SecStr          94..102
+                     /sec_str_type="helix"
+                     /note="helix 6"
+     SecStr          104..112
+                     /sec_str_type="helix"
+                     /note="helix 7"
+     SecStr          122..135
+                     /sec_str_type="helix"
+                     /note="helix 8"
+     SecStr          140..164
+                     /sec_str_type="helix"
+                     /note="helix 9"
+     Het             bond(148)
+                     /heterogen="( HG, 501 )"
+     SecStr          167..175
+                     /sec_str_type="helix"
+                     /note="helix 10"
+     SecStr          210..219
+                     /sec_str_type="helix"
+                     /note="helix 11"
+     SecStr          220..231
+                     /sec_str_type="helix"
+                     /note="helix 12"
+     Het             join(230,234)
+                     /heterogen="( HG, 505 )"
+     SecStr          233..241
+                     /sec_str_type="helix"
+                     /note="helix 13"
+     SecStr          255..275
+                     /sec_str_type="helix"
+                     /note="helix 14"
+     SecStr          279..286
+                     /sec_str_type="helix"
+                     /note="helix 15"
+     SecStr          287..308
+                     /sec_str_type="helix"
+                     /note="helix 16"
+     SecStr          312..321
+                     /sec_str_type="helix"
+                     /note="helix 17"
+     SecStr          326..340
+                     /sec_str_type="helix"
+                     /note="helix 18"
+     Het             join(333,354)
+                     /heterogen="( HG, 504 )"
+     SecStr          345..353
+                     /sec_str_type="helix"
+                     /note="helix 19"
+     Het             bond(355)
+                     /heterogen="( HG, 503 )"
+     SecStr          356..375
+                     /sec_str_type="helix"
+                     /note="helix 20"
+     SecStr          379..398
+                     /sec_str_type="helix"
+                     /note="helix 21"
+ORIGIN      
+        1 myylkntnfw mfglffffyf fimgayfpff piwlhdinhi sksdtgiifa aislfsllfq
+       61 plfgllsdkl glrkyllwii tgmlvmfapf fififgpllq ynilvgsivg giylgfcfna
+      121 gapaveafie kvsrrsnfef grarmfgcvg walgasivgi mftinnqfvf wlgsgcalil
+      181 avllffaktd apssatvana vganhsafsl klalelfrqp klwflslyvi gvsctydvfd
+      241 qqfanfftsf fatgeqgtrv fgyvttmgel lnasimffap liinriggkn alllagtims
+      301 vriigssfat salevvilkt lhmfevpfll vgcfkyitsq fevrfsatiy lvcfcffkql
+      361 amifmsvlag nmyesigfqg aylvlglval gftlisvftl sgpgplsllr rqvneva
+//
+
