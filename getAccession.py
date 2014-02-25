@@ -1,11 +1,11 @@
+#!/usr/bin/env python
 ###############################################################################
-'''
- Program: getAccession.py                                                    
- Rev: 1.0                                                                    
- Date: 8/2/12                                                                
- Author: Steve Essinger, Email: sde22@drexel.edu
- Description: Maps unique ID from database to each alignment
-'''                                                                             #                                                               
+# Program: getAccession.py                                                    
+# Rev: 1.0                                                                    
+# Date: 8/2/12                                                                
+# Author: Steve Essinger, Email: sde22@drexel.edu
+#
+# Description: Maps unique ID from database to each alignment
 ###############################################################################
 
 inFile = open('MFS_metaData.txt','r')

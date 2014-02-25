@@ -1,11 +1,11 @@
+#!/usr/bin/env python
 ###############################################################################
-'''
- Program: rename_tree_leaves.py                                                    
- Rev: 1.0                                                                    
- Date: 8/20/12                                                                
- Author: Steve Essinger, Email: sde22@drexel.edu
- Description: Assigns unique ID from database to corresponding leaves on tree
-'''                                                                             #                                                               
+# Program: rename_tree_leaves.py                                                    
+# Rev: 1.0                                                                    
+# Date: 8/20/12                                                                
+# Author: Steve Essinger, Email: sde22@drexel.edu
+#
+# Description: Assigns unique ID from database to corresponding leaves on tree
 ###############################################################################
 
 refFile = open('MFS_Align.fasta','r')
