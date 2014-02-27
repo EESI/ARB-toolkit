@@ -32,7 +32,20 @@ example usage:
 		build_ift_from_metalabels.py -i ../arb/MFS_Field_labels.txt -o mfs-importer.ift
 
 		rename_tree_leaves.py -r MFS_Align.fasta -i MFS_UID.fasta -l TreeLables_orig.txt -o treelabels_mapped.txt
+
+
+## Usage: ##
+
+### generate ift ###
+
+first generate your ift from a file called Field labels. this is a file that
+contains the label of each field in your database each on it's own line. If
+you look in examples there is an example of this.
+
+		build_ift_from_metalabels.py -i ../arb/MFS_Field_labels.txt -o mfs-importer.ift
 		
+now you need to copy your import filter to the $ARBHOME/lib/import folder
+
 
 
 ### Contributors ###
