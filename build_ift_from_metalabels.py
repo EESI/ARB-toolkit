@@ -16,13 +16,6 @@
 import sys
 import argparse
 
-# Function: Obtain number of meta-data labels from input file
-def fileLen(fname):
-    with open(fname) as f:
-        for i, l in enumerate(f):
-            pass
-    return i + 1
-
 def main():
   inFileName = ""
   noLines = 0
@@ -41,7 +34,6 @@ def main():
     inFileName = raw_input('Enter name of file containing meta-labels: ')
     outFileName= raw_input('Enter desired name of ARB input filter: ')
 
-  noLines = fileLen(inFileName) # Get number of meta-labels from input file
   metaLabels = open(inFileName,'r') # Open input file for meta-label extraction
   outFile = open(outFileName,'w')
 
@@ -63,24 +55,26 @@ def main():
   SRC = []
   syntax = r'"*\t*'
   syntax1 = '"* *'
+  i = 0;
+
   lastPart = r':*\t*=*1"'
-  for i in range(0,noLines):
+  for label in metaLabels:
     if i == 0:
       SRC.append(syntax1 + '=*' + str(count) + lastPart)
     else:
       SRC.append(syntax + '=*' + str(count) + lastPart)
 
-    label = metaLabels.readline()
     outFile.write('MATCH' + '\t' + '\t' + r'">*"' + '\n')
     outFile.write('\t' + '\t' + 'SRT ' + SRC[i] + '\n')
     outFile.write('\t' + '\t' + 'WRITE "' + str(label.strip()) + '"\n\n')
-          
+
     if count == 9:
       syntax = syntax + r'=*9:*'
       count = 1
     if i >= 1:
       syntax = (syntax + r'\t*')
     count = count + 1
+    i = i + 1
 
 
   # Append ARB code to .ift filter for the purposes of extracting the sequences
