@@ -1,4 +1,4 @@
-A tutorial using ARB_Toolkit is available:
+A tutorial using ARB\_Toolkit is available:
 http://www.ece.drexel.edu/gailr/EESI/tutorial.php
 
 Description:
@@ -10,3 +10,4 @@ Erin Reichenberger
 Chris  Blackwood
 Gail Rosen
 Calvin Morrison
+
