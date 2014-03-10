@@ -19,26 +19,26 @@ def main():
     parser.add_argument("-o", "--output-accession", help="output accession list file", required=True)
     args = parser.parse_args()
 
-		inFile = args.input_metadata
-		outFile = args.output_accession
+    inFile = args.input_metadata
+    outFile = args.output_accession
   else:
     inFile = raw_input('Enter input metadata file:')
     outFile   = raw_input('Enter output accession list file:')
 
-	inFile = open(inFile,'r')
-	outFile = open(outFile,'w')
+  inFile = open(inFile,'r')
+  outFile = open(outFile,'w')
 
-	for line in inFile:
-		if line.startswith('>'):
-			temp = line.split('\t',12)
-			revised = temp[11].partition('_')
-			if revised[1]:
-				revised = revised[0]+'|A'
-			else:
-				revised = revised[0]
-			outFile.write(str(temp[1])+'\t'+str(revised)+'\n')
-	inFile.close()
-	outFile.close()
+  for line in inFile:
+    if line.startswith('>'):
+      temp = line.split('\t',12)
+      revised = temp[11].partition('_')
+      if revised[1]:
+        revised = revised[0]+'|A'
+      else:
+        revised = revised[0]
+      outFile.write(str(temp[1])+'\t'+str(revised)+'\n')
+  inFile.close()
+  outFile.close()
 
 if __name__ == "__main__":
   sys.exit(main())
