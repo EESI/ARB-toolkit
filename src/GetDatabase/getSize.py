@@ -2,22 +2,28 @@
 Created: E. Reichenberger (err29@drexl.edu)
 Date: 9.20.2012
 
-Purpose: Interruptions during file downloading process occur and files are not complete. Script checks file size, deletes it when less than 2bytes, and re-downloads file. Works recrussively.
+Purpose: Interruptions during file downloading process occur and files are not
+complete. Script checks file size, deletes it when less than 2bytes, and
+re-downloads file. Works recursively.
 
 Steps:
-1. Get list of all files in MFS directory. 
+1. Get list of all files in db directory. 
 2. Check size of all files in list
 3. If file is smaller than 2b, add name to new list and delete file
-	a. remove 'MFS' and '_MFS.gb' from file name
+	a. remove db and '_db.gb' from file name
 4. Re-download all items in new list.
 5. Re-run script until there are no files to download.
 	a. Using GI number in call
-	b. IMPORTANT!!!!! If more than 100 files need to be downloaded, this can only occur between 9pm-5am EST only (M-F).
+	b. IMPORTANT!!!!! If more than 100 files need to be downloaded, this can only
+		 occur between 9pm-5am EST only (M-F).
 
-IMPORTANT!!!!! Times are listed for EST, if you are in another time zone, make the proper hour changes in this script
+IMPORTANT!!!!! Times are listed for EST, if you are in another time zone, make
+the proper hour changes in this script
 
-As of Feb 15, 2012, the default download file type is in XML format. Add retmode='text' to keep in in gb format
-	e.g. handle=Entrez.efetch(db='nucleotide',id=gi[i], rettype='gb', retmode='text') 
+As of Feb 15, 2012, the default download file type is in XML format. Add
+retmode='text' to keep in in gb format
+
+e.g. handle=Entrez.efetch(db='nucleotide',id=gi[i], rettype='gb', retmode='text')
 '''
 
 import os
@@ -33,17 +39,18 @@ import httplib
 fileList = []
 sizeList = []
 
+db = sys.argv[1]
+
 #########################################################################
 # Get list of files already downloaded from NCBI
 #########################################################################
-path = 'MFS/'
+path = db
 for infile in glob.glob( os.path.join(path, '*.gb') ): #file extension type
 	fileList.append(infile)
 
 for files in fileList:
 	filesize = os.path.getsize(files)
-	newFile = files.replace('MFS/', '')
-	newFile = newFile.replace('_MFS.gb', '')
+	newFile = files.replace(db + '/' '').replace('_' + db + '.gb', '')
 	if filesize < 2.0:
 		sizeList.append(newFile)
 		os.remove(files) #technically, this is not necessary. New downloaded files will overwrite existing ones.
@@ -51,7 +58,7 @@ sizeList.sort()
 
 dupSizeList = []
 for dups in sizeList:
-	newName = 'MFS/' + dups + '_MFS.gb'
+	newName = db + '/' + dups + '_' + db + '.gb'
 	dupSizeList.append(newName)
 	
 while len(sizeList) > 0:
@@ -84,10 +91,10 @@ while len(sizeList) > 0:
 		for gi in sizeList:
 			if ( (datetime.date.today().weekday() < 5 and datetime.datetime.now().time() > datetime.time(hour=21)) or (datetime.date.today().weekday() < 5 and datetime.datetime.now().time() < datetime.time(hour=5)) or (datetime.date.today().weekday() == start_day + 1 and datetime.datetime.now().time() < datetime.time(hour=5)) or (datetime.date.today().weekday() > 5) or len(sizeList) <= 100 ):
 				while True:
-					print 'Downloading ' + gi
+					print 'Downloading ' + gi					
 					try:
 						handle=Entrez.efetch(db='nucleotide',id=gi, rettype='gb', retmode='text') 
-						FILENAME = 'MFS/' + gi + '_MFS.gb'
+						FILENAME = db + '/' + gi + '_' + db + '.gb'
 						local_file=open(FILENAME,'w')
 						local_file.write(handle.read())
 						handle.close()
@@ -111,6 +118,6 @@ while len(sizeList) > 0:
 		break
 
 	for size in sizeList:
-		newName = 'MFS/' + size + '_MFS.gb'
+		newName = db + '/' + size + '_' + db + '.gb'
 		if os.path.getsize(newName) >= 2:
 			sizeList.remove(size)

@@ -1,24 +1,33 @@
 #!/bin/bash
 
+aligned=$1
+accession=$2
+db=$3
+
+echo db
+
 #####################Making Directories###############################
-echo Making MFS and Output directories if they have not already been created...
-mkdir -p MFS
-mkdir -p MFS/Output/
-#copying below file to MFS directory. This is a hack to make sure error message 
+echo Making $db and Output directories if they have not already been created...
+mkdir -p $db
+mkdir -p $db/Output/
+
+#copying below file to $db directory. This is a hack to make sure error message 
 #does not occur when running the conditional statements below. This script can be
 #run if this file is not copied now, but you will get an error message until the
-#MFS directory is not empty.
-cp 93279115_MFS.gb MFS/93279115_MFS.gb
+#$db directory is not empty.
+cp 93279115_$db.gb $db/93279115_$db.gb
+
 
 #####################Calling getGI.py script###############################
 echo Downloading files...
-python getGI.py
+
+python getGI.py $aligned $accession $db
 
 ####################File size checking###############################
 #This script checks to make sure all files are < 2kb. If so, the file
 #is deleted, re-downloaded and then re-run. Script works recrussively.
-Accessioncount=`awk 'END {print NR}' accessionList.txt` #or RequiredNumber = $(wc -l accessionList.txt)
-Filecount=$(find MFS/*.gb -type f -print| wc -l)
+Accessioncount=`wc -l accessionList.txt`
+Filecount=`find $db/*.gb -type f | wc -l`
 if [[ $Filecount -eq $Accessioncount ]]; then
 	echo 
 	echo Checking for corrupted files...
@@ -26,18 +35,20 @@ if [[ $Filecount -eq $Accessioncount ]]; then
 	python getSize.py
 fi
 
-#####################Copying 93279115_MFS.gb to MFS Directory###############################
-#The original file has errors in it. This file must be copied to MFS/ otherwise NextractGb.py will not function!
-#Don't even think about not copying this file over to the directory.
-Filecount=$(find MFS/*.gb -type f -print| wc -l)
+#TODO wtf is this 
+
+# Copying 93279115_$db.gb to $db Directory
+# The original file has errors in it. This file must be copied to $db/ otherwise NextractGb.py will not function!
+# Don't even think about not copying this file over to the directory.
+Filecount=$(find $db/*.gb -type f -print| wc -l)
 if [[ $Filecount -eq $Accessioncount ]]; then
-echo Copying file 93279115_MFS.gb...
+echo Copying file 93279115_$db.gb...
 	echo 
-	cp 93279115_MFS.gb MFS/93279115_MFS.gb
+	cp 93279115_$db.gb $db/93279115_$db.gb
 fi
 
-################################Verifying number of files####################################
-Filecount=$(find MFS/*.gb -type f -print| wc -l)
+# Verifying number of files
+Filecount=$(find $db/*.gb -type f | wc -l)
 
 if [[ $Filecount -eq $Accessioncount ]]; then
 	echo Extracting data...

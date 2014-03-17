@@ -363,7 +363,6 @@ for database in databases:
 
 	######################TAXONOMIC ASSIGNMENT LOOP#############################
 	# This uses an id to taxon module to get name and ranking assignment
-	###########################################################################
 
 		if 'getTaxonomy' in locals():
 			spec,spec_rank = get_taxonomy(metaData['taxonID'],node,Nname) #calls module
@@ -416,7 +415,7 @@ for database in databases:
 		OutputMetaData.write('\n' + str(record.seq) + '\n')
 			
 
-	###################Writing CDS Sequences to file################################
+	# Writing CDS Sequences to file
 		OutputCDSData.write(lineStarter + '\t' + uniqueID + '\t' + file + '\n')
 		if not CDS_sequenceList:
 			CDS_sequenceList.append('NA')
@@ -437,9 +436,12 @@ for database in databases:
 		exonsequenceList = str(exon_sequenceList)
 		exonsequenceList = re.sub(r'[ \',\]\[]', '', exonsequenceList)					
 		OutputExonData.write(exonsequenceList + '\n')
+		
+		#augment counter by 1 at the end of each loop
+		fileCounter+=1 
 
-		fileCounter+=1 #augment counter by 1 at the end of each loop
-		del metaData #to re-use dictionary, contents are removed after each loop pass
+		#to re-use dictionary, contents are removed after each loop pass
+		del metaData 
 		del exon_sequenceList
 		del CDS_sequenceList
 		del CDS_subfeatureSequenceList
