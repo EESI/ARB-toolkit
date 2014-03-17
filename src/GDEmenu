@@ -1,0 +1,16 @@
+lmenu:Import
+menumeta:I
+# 1 "MENUS/import.genmenu" 1
+
+
+item:Create Import Filter from Metafile
+seqtype:-
+itemmethod:build_ift_from_metalabels.py -i $LABEL -o $FILTER > OUTPUTFILE
+arg:LABEL
+argtype:text
+arglabel: Metalabel
+arg:FILTER
+argtype:text
+arglabel:Output filter location
+out:OUTPUTFILE
+outformat:flat
