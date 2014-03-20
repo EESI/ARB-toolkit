@@ -6,7 +6,10 @@
 # Author: Steve Essinger, Email: sde22@drexel.edu
 #
 # Description: Assigns unique ID from database to corresponding leaves on tree
-###############################################################################
+#
+# Example:
+#
+# rename_tree_leaves.py -r MFS_Aligin.fasta -i MFS_UID.fasta -l TreeLabels_orig.txt -o TreeLabels_Mapped_New.txt
 
 import sys
 import argparse
@@ -15,19 +18,19 @@ def main():
 
   if len(sys.argv) != 1:
     parser = argparse.ArgumentParser(description="Assigns unique ID from database to corresponding leaves on tree")
-    parser.add_argument("-r", "--ref", help="input ref file", required=True)
-    parser.add_argument("-i", "--id", help="input id file", required=True)
-    parser.add_argument("-l", "--labels", help="input tree  labels file", required=True)
-    parser.add_argument("-out", "--out", help="mapped output tree file", required=True)
+    parser.add_argument("-a", "--aligned-fasta", help="input aligned reference fasta file", required=True)
+    parser.add_argument("-u", "--uid-fasta", help="input unique ID'd labeled fasta file", required=True)
+    parser.add_argument("-l", "--labels", help="input tree labels file", required=True)
+    parser.add_argument("-o", "--out", help="mapped output tree file", required=True)
     args = parser.parse_args()
 
-    ref_fn  = args.ref
-    id_fn   = args.id
+    ref_fn  = args.aligned_fasta
+    id_fn   = args.uid_fasta
     tree_fn = args.labels
     out_fn  = args.out
   else:
-    ref_fn  = raw_input('Enter input ref file:')
-    id_fn   = raw_input('Enter input id file:')
+    ref_fn  = raw_input('Enter aligned fasta file:')
+    id_fn   = raw_input('Enter UID fasta file:')
     tree_fn = raw_input('Enter input tree labels file:')
     out_fn  = raw_input('Enter output tree file:')
 

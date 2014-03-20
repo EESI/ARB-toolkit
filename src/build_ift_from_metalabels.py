@@ -1,17 +1,20 @@
 #!/usr/bin/env python
-###############################################################################
-# Program: buildFilter.py                                                     #
-# Rev: 1.0                                                                    #
-# Date: 1/25/12                                                               #
-# Author: S. Essinger                                                         #
-# Contributor: Calvin Morrison                                                #
-#                                                                             #
-# Description: This script generates the ARB .ift filter for your custom      #
-# database. You must provide an input file containing the names of each       #
-# meta-data field residing in your database, one name per line                #
-# (see example: metaLables.txt). The output .ift file should then be placed   #
-# in the ARB directory under: /arb/lib/import/                                #
-###############################################################################
+# Program: build_ift_from_metalabels.py
+# Rev: 1.0
+# Date: 1/25/12
+# Author: S. Essinger
+# Contributor: Calvin Morrison
+#
+# Description: This script generates the ARB .ift filter for your custom
+# database. You must provide an input file containing the names of each
+# meta-data field residing in your database, one name per line
+# (see example: metaLables.txt). The output .ift file should then be placed
+# in the ARB directory under: /arb/lib/import/                                
+#
+# 
+# Example:
+#
+# build_ift_from_metalabels.py -i meta_label.txt -o output_filter.ift
 
 import sys
 import argparse
@@ -25,7 +28,7 @@ def main():
   if len(sys.argv) != 1:
     parser = argparse.ArgumentParser(description="arb IFT generator for custom databases\n")
     parser.add_argument("-i", "--input", help="input metalabel file", required=True)
-    parser.add_argument("-o", "--output", help="output ift file", required=True)
+    parser.add_argument("-o", "--output", help="output ift filter file", required=True)
     args = parser.parse_args()
 
     inFileName = args.input

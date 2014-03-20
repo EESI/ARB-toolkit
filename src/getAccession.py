@@ -1,12 +1,14 @@
 #!/usr/bin/env python
-###############################################################################
 # Program: getAccession.py
 # Rev: 1.0
 # Date: 8/2/12
 # Author: Steve Essinger, Email: sde22@drexel.edu
 #
 # Description: Maps unique ID from database to each alignment
-###############################################################################
+# 
+# Example:
+#
+# getAccession.py -i MFS_metaData.txt -o ListAccessions.txt
 
 import sys
 import argparse
