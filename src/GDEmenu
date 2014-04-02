@@ -5,12 +5,26 @@ menumeta:I
 
 item:Create Import Filter from Metafile
 seqtype:-
-itemmethod:build_ift_from_metalabels.py -i $LABEL -o $FILTER > OUTPUTFILE
-arg:LABEL
-argtype:text
-arglabel: Metalabel
-arg:FILTER
-argtype:text
-arglabel:Output filter location
+itemmethod:arb_import_pipeline.sh $ALIGN $TREE $METAFILE $METALABEL $OUTPUT_DIRECTORY 
+
+arg:ALIGN
+argtype:filename
+arglabel: Aligned Fasta File
+
+arg:TREE
+argtype:filename
+arglabel: Phylogenic Tree
+
+arg:METAFILE
+argtype:filename
+arglabel: Metadata File
+
+arg:METALABEL
+argtype:filename
+arglabel: Metadata sequence header column labels
+
+arg:OUTPUT_DIRECTORY
+argtype:filename
+arglabel:Output folder location
 out:OUTPUTFILE
 outformat:flat
