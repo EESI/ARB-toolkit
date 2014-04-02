@@ -30,7 +30,6 @@ implementation of the toolkit is provided in the supplementary material.
 example usage:
 
 		getAccession.py -i MFS_metaData.txt -o ListAccessions.txt
-
 		addUIDtoFasta.py -i ListAcessions.txt -a MFS_Align.fasta -o MFS_UID.fasta
 		rename_tree_leaves.py -a MFS_Align.fasta -i MFS_UID.fasta -l TreeLables_orig.txt -o treelabels_mapped.txt
 

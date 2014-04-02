@@ -67,8 +67,8 @@ def main():
           outFile.write(str(orig[0])+'\t'+str(ID[i].strip())+'\n')
         continue
 
-    if i == len(REF)-1:
-      print orig[0].strip()
+    #if i == len(REF)-1:
+    #  print orig[0].strip()
 
   giFile.close()
   outFile.close()

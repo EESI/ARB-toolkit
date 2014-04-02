@@ -18,7 +18,7 @@ def main():
     args = parser.parse_args()
 
     inAccFn = args.input_accession
-    inAlnFn = args.input_fasta
+    inAlnFn = args.aligned_fasta
     outAlnFn = args.output_fasta
   else:
     inAccFn  = raw_input('Enter input accession file:')
