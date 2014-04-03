@@ -21,7 +21,7 @@ def main():
     parser.add_argument("-a", "--aligned-fasta", help="input aligned reference fasta file", required=True)
     parser.add_argument("-u", "--uid-fasta", help="input unique ID'd labeled fasta file", required=True)
     parser.add_argument("-l", "--labels", help="input tree labels file", required=True)
-    parser.add_argument("-o", "--out", help="mapped output tree file", required=True)
+    parser.add_argument("-o", "--out", help="mapped mapped tree labels file", required=True)
     args = parser.parse_args()
 
     ref_fn  = args.aligned_fasta
