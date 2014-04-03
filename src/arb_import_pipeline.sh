@@ -23,6 +23,9 @@ if (( $# < 5 )); then
 	exit
 else
 
+
+echo 
+echo "VARIABLES:"
 echo align_fa=$1
 echo tree=$2
 echo metadata=$3
@@ -34,12 +37,13 @@ fi
 if [[ ! -d "$output_dir" ]]; then
 	mkdir -p "$output_dir"
 fi
-
 accession="$output_dir/accession"
 UID_fa="$output_dir/$(basename $align_fa)"
+UID_tree="$output_dir/$(basename $tree)"
 treelabels_original="$output_dir/extracted_labels"
 treelabels_mapped="$output_dir/mapped_labels"
 ift_filter="$output_dir/$(basename $align_fa).ift"
+echo
 
 
 echo "getting accession numbers"
@@ -48,7 +52,9 @@ echo "adding Unique ID's to aligned fasta"
 addUIDtoFasta.py -i $accession -a $align_fa -o $UID_fa
 echo "extracting leaf names"
 extract_leaf_names.py -i $tree -o $treelabels_original
-echo "renaming tree leaf names"
+echo "building new tree leaf names"
 rename_tree_leaves.py -a $align_fa -u $UID_fa -l $treelabels_original -o $treelabels_mapped
+echo "converting tree to new names"
+convert_leaf_names.py -i $tree -l $treelabels_mapped -o $UID_tree
 echo "building ARB ift filter"
 build_ift_from_metalabels.py -i $metalabels -o $ift_filter

@@ -15,7 +15,7 @@ def main():
 
 	parser = argparse.ArgumentParser(description="extracts clade names from a newick phylogenic")
 	parser.add_argument("-i", "--input", help="input tree file", required=True)
-	parser.add_argument("-o", "--output", help="mapped output tree file", required=True)
+	parser.add_argument("-o", "--output", help="extracted clade names output file", required=True)
 	args = parser.parse_args()
 
 	tree = p.read(args.input, 'newick')
