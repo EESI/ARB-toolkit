@@ -1,0 +1,4 @@
+- remove any special cases
+	- get accession ( take column for accession no )
+	- add UID to fasta
+	- rename tree leaves
