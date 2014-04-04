@@ -61,7 +61,7 @@ def main():
     temp = line[2].partition('|')
     line = temp[0]
 
-    for i in range(0,len(headers)):
+    for i in range(len(headers)):
       if line.strip() in headers[i]:
         if temp[1]:
           out_fh.write(str(orig[0])+'A'+'\t'+str(ids[i].strip())+'\n')
