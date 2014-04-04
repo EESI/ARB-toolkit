@@ -21,7 +21,7 @@ def main():
 
     tree = p.read(args.input, 'newick')
     out_fh = open(args.output, 'w')
-    labels_fh = open(args.output, 'r')
+    labels_fh = open(args.labels, 'r')
     labels = {}
     for row in labels_fh:
         old, new = row.split()
@@ -29,9 +29,11 @@ def main():
 
     for clade in tree.find_elements({}):
         if clade.name in labels:
-            clade.name = labels[old]
+            clade.name = labels[clade.name]
+        else:
+          if clade.name is not None and len(clade.name) is not 0:
+            print "Error:", clade.name, "not in db. it won't get mapped to its UID"
 
-        out_fh.write(str(clade.name) + "\n")
     p.write(tree, args.output, 'newick')
 
 if __name__ == "__main__":
