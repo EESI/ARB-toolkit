@@ -34,44 +34,45 @@ def main():
     tree_fn = raw_input('Enter input tree labels file:')
     out_fn  = raw_input('Enter output tree file:')
 
-  refFile = open(ref_fn, 'r')
-  idFile  = open(id_fn,  'r')
-  giFile  = open(tree_fn,'r')
-  outFile = open(out_fn, 'w')
+  labels_fh= open(tree_fn,'r')
+  out_fh   = open(out_fn, 'w')
 
-  REF = []
-  for line in refFile:
-    if line.startswith('>'):
-      REF.append(line.strip())
-  refFile.close()
+  headers = []
+  ids = []
 
-  ID = []
-  for line in idFile:
-    if line.startswith('>'):
-      temp = line.partition('>')
-      ID.append(temp[2].strip())
-  idFile.close()
+  # add all our headers to headers
+  with open(ref_fn, 'r') as fh:
+    for line in fh:
+      if line.startswith('>'):
+        headers.append(line.strip())
 
-  for line in giFile:
+  # Add our Uids's to ids
+  with open(id_fn, 'r') as fh:
+    for line in fh:
+      if line.startswith('>'):
+        # remove > and \n
+        ids.append(line[1:-1])
+
+  # iterate over each line in our tree labels file
+  for line in labels_fh:
     orig = line.strip()
     orig = orig.partition('|')
     line = line.partition('_')
     temp = line[2].partition('|')
     line = temp[0]
 
-    for i in range(0,len(REF)):
-      if line.strip() in REF[i]:
+    for i in range(0,len(headers)):
+      if line.strip() in headers[i]:
         if temp[1]:
-          outFile.write(str(orig[0])+'A'+'\t'+str(ID[i].strip())+'\n')
+          out_fh.write(str(orig[0])+'A'+'\t'+str(ids[i].strip())+'\n')
         else:
-          outFile.write(str(orig[0])+'\t'+str(ID[i].strip())+'\n')
+          out_fh.write(str(orig[0])+'\t'+str(ids[i].strip())+'\n')
         continue
 
     #if i == len(REF)-1:
     #  print orig[0].strip()
 
-  giFile.close()
-  outFile.close()
+  out_fh.close()
 
 if __name__ == "__main__":
   sys.exit(main())
