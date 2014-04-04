@@ -22,7 +22,7 @@ def main():
 	out_fh = open(args.output, 'w')
 
 	for clade in tree.find_elements({}):
-		if clade.name is not None:
+		if clade.name is not None and len(clade.name) is not 0:
 			out_fh.write(str(clade.name) + "\n")
 
 if __name__ == "__main__":
