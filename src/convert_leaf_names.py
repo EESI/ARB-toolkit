@@ -24,8 +24,14 @@ def main():
     labels_fh = open(args.labels, 'r')
     labels = {}
     for row in labels_fh:
-        old, new = row.split()
-        labels[old] = new
+      row = row.split()
+      if len(row) == 2:
+        old, new = row
+      else:
+        print "could not parse labels:", row
+        exit(1)
+
+      labels[old] = new
 
     for clade in tree.find_elements({}):
         if clade.name in labels:
