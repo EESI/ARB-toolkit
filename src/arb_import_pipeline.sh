@@ -19,7 +19,7 @@ metalabels=$4
 output_dir=$5
 
 if (( $# < 5 )); then  
-	echo "you need more arguments!"
+	echo "$0: aligned.fasta tree metadata metadata-label output"
 	exit
 else
 
@@ -47,11 +47,11 @@ echo
 
 
 echo "getting accession numbers"
-getAccession.py -i $metadata -o $accession
+getAccession.py -i $metadata -o $accession # works
 echo "adding Unique ID's to aligned fasta"
-addUIDtoFasta.py -i $accession -a $align_fa -o $UID_fa
+addUIDtoFasta.py -i $accession -a $align_fa -o $UID_fa # works
 echo "extracting leaf names"
-extract_leaf_names.py -i $tree -o $treelabels_original
+extract_leaf_names.py -i $tree -o $treelabels_original # doesn't work!
 echo "building new tree leaf names"
 rename_tree_leaves.py -a $align_fa -u $UID_fa -l $treelabels_original -o $treelabels_mapped
 echo "converting tree to new names"
